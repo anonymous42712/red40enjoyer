@@ -125,16 +125,10 @@
     index = (index + 1) % titles.length;
   }, 1000);
 
-  // Cooldown logic (4 seconds)
-  let canPlay = true;
+  // Play audio instantly
   function play(file) {
-    if (!canPlay) return; // ignore clicks during cooldown
     const audio = new Audio(file);
     audio.play().catch(e => console.log("Error playing audio:", e));
-    canPlay = false;
-    setTimeout(() => {
-      canPlay = true;
-    }, 4000);
   }
 </script>
 
