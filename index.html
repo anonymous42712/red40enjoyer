@@ -52,9 +52,9 @@
       border-radius: 8px;
       min-height: 55px;
       line-height: 1.2;
-      word-break: break-word;  /* allow wrapping */
-      white-space: normal;     /* allow wrapping onto multiple lines */
-      overflow: visible;       /* don’t cut text */
+      word-break: break-word;
+      white-space: normal;
+      overflow: visible;
     }
 
     button:hover {
@@ -89,21 +89,7 @@
     }
   </style>
 </head>
-<script>
-  const titles = [
-    " We love Red 40",
-    " Play Sounds!",
-    " Geekin",
-    " Have Fun!"
-  ];
 
-  let index = 0;
-
-  setInterval(() => {
-    document.title = titles[index];
-    index = (index + 1) % titles.length;
-  }, 1000); // change every 1 second
-</script>
 <body>
 
 <h2>SOUNDBOARD</h2>
@@ -131,21 +117,23 @@
 </footer>
 
 <script>
-  <script>
-  let canPlay = true; // flag to control cooldown
+  // Animated tab title
+  const titles = [" We love Red 40", " Play Sounds!", " Geekin", " Have Fun!"];
+  let index = 0;
+  setInterval(() => {
+    document.title = titles[index];
+    index = (index + 1) % titles.length;
+  }, 1000);
 
+  // Cooldown logic (4 seconds)
+  let canPlay = true;
   function play(file) {
-    if (!canPlay) return; // exit if still in cooldown
-
+    if (!canPlay) return; // ignore clicks during cooldown
     new Audio(file).play();
     canPlay = false;
-
-    // set cooldown for 2 seconds
     setTimeout(() => {
       canPlay = true;
-    }, 2000);
-  }
-</script>
+    }, 4000); // 4000ms = 4 seconds
   }
 </script>
 
