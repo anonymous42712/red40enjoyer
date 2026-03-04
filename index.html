@@ -96,20 +96,20 @@
 
 <div class="board">
   <button onclick="play('sounds/Chinese.mp3')">CHINESE</button>
-  <button onclick="play('sounds/Vine boom sound effect 0.mp3')">VINE BOOM</button>
-  <button onclick="play('sounds/Fahhhh - Sound effect (HD).mp3')">FAHHHH</button>
-  <button onclick="play('sounds/knocking.mp3')">KNOCKING</button>
-  <button onclick="play('sounds/goo goo gaga.mp3')">GOO GOO GAGA</button>
-  <button onclick="play('sounds/tung tung sahur.mp3')">TUNG TUNG SAHUR</button>
-  <button onclick="play('sounds/kirk.mp3')">KIRK</button>
-  <button onclick="play('sounds/rip my granny.mp3')">RIP MY GRANNY</button>
-  <button onclick="play('sounds/fart.mp3')">FART</button>
-  <button onclick="play('sounds/applepay.mp3')">APPLE PAY</button>
-  <button onclick="play('sounds/incorrect buzzer.mp3')">INCORRECT BUZZER</button>
-  <button onclick="play('sounds/shut up mom.mp3')">SHUT UP MOM</button>
-  <button onclick="play('sounds/snore.mp3')">SNORE</button>
-  <button onclick="play('sounds/meow.mp3')">MEOW</button>
-  <button onclick="play('sounds/pluh.mp3')">PLUH</button>
+  <button onclick="play('sounds/VineBoom0.mp3')">VINE BOOM</button>
+  <button onclick="play('sounds/FahhhhHD.mp3')">FAHHHH</button>
+  <button onclick="play('sounds/Knocking.mp3')">KNOCKING</button>
+  <button onclick="play('sounds/GooGooGaga.mp3')">GOO GOO GAGA</button>
+  <button onclick="play('sounds/TungTungSahur.mp3')">TUNG TUNG SAHUR</button>
+  <button onclick="play('sounds/Kirk.mp3')">KIRK</button>
+  <button onclick="play('sounds/RipMyGranny.mp3')">RIP MY GRANNY</button>
+  <button onclick="play('sounds/Fart.mp3')">FART</button>
+  <button onclick="play('sounds/ApplePay.mp3')">APPLE PAY</button>
+  <button onclick="play('sounds/IncorrectBuzzer.mp3')">INCORRECT BUZZER</button>
+  <button onclick="play('sounds/ShutUpMom.mp3')">SHUT UP MOM</button>
+  <button onclick="play('sounds/Snore.mp3')">SNORE</button>
+  <button onclick="play('sounds/Meow.mp3')">MEOW</button>
+  <button onclick="play('sounds/Pluh.mp3')">PLUH</button>
 </div>
 
 <footer>
@@ -129,11 +129,12 @@
   let canPlay = true;
   function play(file) {
     if (!canPlay) return; // ignore clicks during cooldown
-    new Audio(file).play();
+    const audio = new Audio(file);
+    audio.play().catch(e => console.log("Error playing audio:", e));
     canPlay = false;
     setTimeout(() => {
       canPlay = true;
-    }, 4000); // 4000ms = 4 seconds
+    }, 4000);
   }
 </script>
 
