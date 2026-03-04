@@ -89,27 +89,41 @@
     }
   </style>
 </head>
+<script>
+  const titles = [
+    " We love Red 40",
+    " Play Sounds!",
+    " Geekin",
+    " Have Fun!"
+  ];
 
+  let index = 0;
+
+  setInterval(() => {
+    document.title = titles[index];
+    index = (index + 1) % titles.length;
+  }, 1000);
+</script>
 <body>
 
 <h2>SOUNDBOARD</h2>
 
 <div class="board">
   <button onclick="play('sounds/Chinese.mp3')">CHINESE</button>
-  <button onclick="play('sounds/VineBoom0.mp3')">VINE BOOM</button>
-  <button onclick="play('sounds/FahhhhHD.mp3')">FAHHHH</button>
-  <button onclick="play('sounds/Knocking.mp3')">KNOCKING</button>
-  <button onclick="play('sounds/GooGooGaga.mp3')">GOO GOO GAGA</button>
-  <button onclick="play('sounds/TungTungSahur.mp3')">TUNG TUNG SAHUR</button>
-  <button onclick="play('sounds/Kirk.mp3')">KIRK</button>
-  <button onclick="play('sounds/RipMyGranny.mp3')">RIP MY GRANNY</button>
-  <button onclick="play('sounds/Fart.mp3')">FART</button>
-  <button onclick="play('sounds/ApplePay.mp3')">APPLE PAY</button>
-  <button onclick="play('sounds/IncorrectBuzzer.mp3')">INCORRECT BUZZER</button>
-  <button onclick="play('sounds/ShutUpMom.mp3')">SHUT UP MOM</button>
-  <button onclick="play('sounds/Snore.mp3')">SNORE</button>
-  <button onclick="play('sounds/Meow.mp3')">MEOW</button>
-  <button onclick="play('sounds/Pluh.mp3')">PLUH</button>
+  <button onclick="play('sounds/Vineboom.mp3')">VINE BOOM</button>
+  <button onclick="play('sounds/Fahhh.mp3')">FAHHH</button>
+  <button onclick="play('sounds/knocking.mp3')">KNOCKING</button>
+  <button onclick="play('sounds/googoogaga.mp3')">GOO GOO GAGA</button>
+  <button onclick="play('sounds/tungtungsahur.mp3')">TUNG TUNG SAHUR</button>
+  <button onclick="play('sounds/kirk.mp3')">KIRK</button>
+  <button onclick="play('sounds/ripmygranny.mp3')">RIP MY GRANNY</button>
+  <button onclick="play('sounds/fart.mp3')">FART</button>
+  <button onclick="play('sounds/applepay.mp3')">APPLE PAY</button>
+  <button onclick="play('sounds/incorrectbuzzer.mp3')">INCORRECT BUZZER</button>
+  <button onclick="play('sounds/shutupmom.mp3')">SHUT UP MOM</button>
+  <button onclick="play('sounds/snore.mp3')">SNORE</button>
+  <button onclick="play('sounds/meow.mp3')">MEOW</button>
+  <button onclick="play('sounds/pluh.mp3')">PLUH</button>
 </div>
 
 <footer>
@@ -117,18 +131,8 @@
 </footer>
 
 <script>
-  // Animated tab title
-  const titles = [" We love Red 40", " Play Sounds!", " Geekin", " Have Fun!"];
-  let index = 0;
-  setInterval(() => {
-    document.title = titles[index];
-    index = (index + 1) % titles.length;
-  }, 1000);
-
-  // Play audio instantly
   function play(file) {
-    const audio = new Audio(file);
-    audio.play().catch(e => console.log("Error playing audio:", e));
+    new Audio(file).play();
   }
 </script>
 
