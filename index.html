@@ -131,8 +131,21 @@
 </footer>
 
 <script>
+  <script>
+  let canPlay = true; // flag to control cooldown
+
   function play(file) {
+    if (!canPlay) return; // exit if still in cooldown
+
     new Audio(file).play();
+    canPlay = false;
+
+    // set cooldown for 2 seconds
+    setTimeout(() => {
+      canPlay = true;
+    }, 2000);
+  }
+</script>
   }
 </script>
 
