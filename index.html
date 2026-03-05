@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Soundboard</title>
-  <!-- Google Fonts -->
+
   <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600&family=Orbitron:wght@500&display=swap" rel="stylesheet">
 
   <style>
@@ -14,7 +14,6 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
       min-height: 100vh;
       margin: 0;
       padding: 20px;
@@ -22,11 +21,9 @@
     }
 
     h2 {
-      font-weight: 600;
       letter-spacing: 3px;
       text-shadow: 0 0 10px #fff;
       margin-bottom: 30px;
-      text-align: center;
     }
 
     .board {
@@ -44,17 +41,11 @@
       color: #fff;
       padding: 16px;
       font-size: 12px;
-      letter-spacing: 0.5px;
       cursor: pointer;
       transition: 0.2s ease;
       text-shadow: 0 0 6px #fff;
-      font-weight: 500;
       border-radius: 8px;
       min-height: 55px;
-      line-height: 1.2;
-      word-break: break-word;
-      white-space: normal;
-      overflow: visible;
     }
 
     button:hover {
@@ -65,74 +56,43 @@
     button:active {
       transform: scale(0.95);
     }
-
-    footer {
-      margin-top: 40px;
-      font-size: 12px;
-      letter-spacing: 1px;
-      text-align: center;
-      color: #aaa;
-      text-shadow: 0 0 4px #fff;
-    }
-
-    footer a {
-      color: #fff;
-      text-decoration: underline;
-    }
-
-    @media (max-width: 400px) {
-      button {
-        padding: 14px;
-        font-size: 11px;
-        min-height: 50px;
-      }
-    }
   </style>
 </head>
-<script>
-  const titles = [
-    " We love Red 40",
-    " Play Sounds!",
-    " Geekin",
-    " Have Fun!"
-  ];
 
-  let index = 0;
-
-  setInterval(() => {
-    document.title = titles[index];
-    index = (index + 1) % titles.length;
-  }, 1000);
-</script>
 <body>
 
 <h2>SOUNDBOARD</h2>
 
 <div class="board">
-  <button onclick="play('sounds/Chinese.mp3')">CHINESE</button>
-  <button onclick="play('sounds/Vineboom.mp3')">VINE BOOM</button>
-  <button onclick="play('sounds/Fahhh.mp3')">FAHHH</button>
-  <button onclick="play('sounds/knocking.mp3')">KNOCKING</button>
-  <button onclick="play('sounds/googoogaga.mp3')">GOO GOO GAGA</button>
-  <button onclick="play('sounds/tungtungsahur.mp3')">TUNG TUNG SAHUR</button>
-  <button onclick="play('sounds/kirk.mp3')">KIRK</button>
-  <button onclick="play('sounds/ripmygranny.mp3')">RIP MY GRANNY</button>
-  <button onclick="play('sounds/fart.mp3')">FART</button>
-  <button onclick="play('sounds/applepay.mp3')">APPLE PAY</button>
-  <button onclick="play('sounds/incorrectbuzzer.mp3')">INCORRECT BUZZER</button>
-  <button onclick="play('sounds/shutupmom.mp3')">SHUT UP MOM</button>
-  <button onclick="play('sounds/snore.mp3')">SNORE</button>
-  <button onclick="play('sounds/meow.mp3')">MEOW</button>
-  <button onclick="play('sounds/pluh.mp3')">PLUH</button>
+  <button onclick="playSound('sounds/Chinese.mp3')">CHINESE</button>
+  <button onclick="playSound('sounds/Vineboom.mp3')">VINE BOOM</button>
+  <button onclick="playSound('sounds/Fahhh.mp3')">FAHHH</button>
+  <button onclick="playSound('sounds/knocking.mp3')">KNOCKING</button>
+  <button onclick="playSound('sounds/googoogaga.mp3')">GOO GOO GAGA</button>
+  <button onclick="playSound('sounds/tungtungsahur.mp3')">TUNG TUNG SAHUR</button>
+  <button onclick="playSound('sounds/kirk.mp3')">KIRK</button>
+  <button onclick="playSound('sounds/ripmygranny.mp3')">RIP MY GRANNY</button>
+  <button onclick="playSound('sounds/fart.mp3')">FART</button>
+  <button onclick="playSound('sounds/applepay.mp3')">APPLE PAY</button>
+  <button onclick="playSound('sounds/incorrectbuzzer.mp3')">INCORRECT BUZZER</button>
+  <button onclick="playSound('sounds/shutupmom.mp3')">SHUT UP MOM</button>
+  <button onclick="playSound('sounds/snore.mp3')">SNORE</button>
+  <button onclick="playSound('sounds/meow.mp3')">MEOW</button>
+  <button onclick="playSound('sounds/pluh.mp3')">PLUH</button>
 </div>
 
-<footer>
-  For support contact <a href="mailto:red40sitesupport@gmail.com">red40sitesupport@gmail.com</a>
-</footer>
-
 <script>
-  function play(file) {
-    new Audio(file).play();
+  // Create ONE persistent audio object
+  const audio = new Audio();
+  audio.preload = "auto";
+
+  function playSound(file) {
+    audio.pause();
+    audio.currentTime = 0;
+    audio.src = file;
+    audio.play().catch(err => {
+      console.log("Playback error:", err);
+    });
   }
 </script>
 
