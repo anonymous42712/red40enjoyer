@@ -56,6 +56,20 @@
     button:active {
       transform: scale(0.95);
     }
+
+    footer {
+      margin-top: 40px;
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-align: center;
+      color: #aaa;
+      text-shadow: 0 0 4px #fff;
+    }
+
+    footer a {
+      color: #fff;
+      text-decoration: underline;
+    }
   </style>
 </head>
 
@@ -64,9 +78,9 @@
 <h2>SOUNDBOARD</h2>
 
 <div class="board">
-  <button onclick="playSound('sounds/Chinese.mp3')">CHINESE</button>
-  <button onclick="playSound('sounds/Vineboom.mp3')">VINE BOOM</button>
-  <button onclick="playSound('sounds/Fahhh.mp3')">FAHHH</button>
+  <button onclick="playSound('sounds/chinese.mp3')">CHINESE</button>
+  <button onclick="playSound('sounds/vineboom.mp3')">VINE BOOM</button>
+  <button onclick="playSound('sounds/fahhh.mp3')">FAHHH</button>
   <button onclick="playSound('sounds/knocking.mp3')">KNOCKING</button>
   <button onclick="playSound('sounds/googoogaga.mp3')">GOO GOO GAGA</button>
   <button onclick="playSound('sounds/tungtungsahur.mp3')">TUNG TUNG SAHUR</button>
@@ -81,8 +95,14 @@
   <button onclick="playSound('sounds/pluh.mp3')">PLUH</button>
 </div>
 
+<footer>
+  For support contact 
+  <a href="mailto:red40sitesupport@gmail.com">
+    red40sitesupport@gmail.com
+  </a>
+</footer>
+
 <script>
-  // Create ONE persistent audio object
   const audio = new Audio();
   audio.preload = "auto";
 
@@ -90,9 +110,7 @@
     audio.pause();
     audio.currentTime = 0;
     audio.src = file;
-    audio.play().catch(err => {
-      console.log("Playback error:", err);
-    });
+    audio.play().catch(err => console.log(err));
   }
 </script>
 
