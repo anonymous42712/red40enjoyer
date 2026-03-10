@@ -1,76 +1,76 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Soundboard</title>
+<meta charset="UTF-8">
+<title>Soundboard</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600&family=Orbitron:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600&family=Orbitron:wght@500&display=swap" rel="stylesheet">
 
-  <style>
-    body {
-      background: #000;
-      color: #fff;
-      font-family: 'Exo 2', sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 100vh;
-      margin: 0;
-      padding: 20px;
-      box-sizing: border-box;
-    }
+<style>
+body{
+background:#000;
+color:#fff;
+font-family:'Exo 2',sans-serif;
+display:flex;
+flex-direction:column;
+align-items:center;
+min-height:100vh;
+margin:0;
+padding:20px;
+box-sizing:border-box;
+}
 
-    h2 {
-      letter-spacing: 3px;
-      text-shadow: 0 0 10px #fff;
-      margin-bottom: 30px;
-    }
+h2{
+letter-spacing:3px;
+text-shadow:0 0 10px #fff;
+margin-bottom:30px;
+}
 
-    .board {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 15px;
-      width: 100%;
-      max-width: 800px;
-    }
+.board{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+gap:15px;
+width:100%;
+max-width:800px;
+}
 
-    button {
-      font-family: 'Orbitron', sans-serif;
-      background: #000;
-      border: 1px solid #fff;
-      color: #fff;
-      padding: 16px;
-      font-size: 12px;
-      cursor: pointer;
-      transition: 0.2s ease;
-      text-shadow: 0 0 6px #fff;
-      border-radius: 8px;
-      min-height: 55px;
-    }
+button{
+font-family:'Orbitron',sans-serif;
+background:#000;
+border:1px solid #fff;
+color:#fff;
+padding:16px;
+font-size:12px;
+cursor:pointer;
+transition:0.2s ease;
+text-shadow:0 0 6px #fff;
+border-radius:8px;
+min-height:55px;
+}
 
-    button:hover {
-      background: #111;
-      box-shadow: 0 0 20px #fff;
-    }
+button:hover{
+background:#111;
+box-shadow:0 0 20px #fff;
+}
 
-    button:active {
-      transform: scale(0.95);
-    }
+button:active{
+transform:scale(0.95);
+}
 
-    footer {
-      margin-top: 40px;
-      font-size: 12px;
-      letter-spacing: 1px;
-      text-align: center;
-      color: #aaa;
-      text-shadow: 0 0 4px #fff;
-    }
+footer{
+margin-top:40px;
+font-size:12px;
+letter-spacing:1px;
+text-align:center;
+color:#aaa;
+text-shadow:0 0 4px #fff;
+}
 
-    footer a {
-      color: #fff;
-      text-decoration: underline;
-    }
-  </style>
+footer a{
+color:#fff;
+text-decoration:underline;
+}
+</style>
 </head>
 
 <body>
@@ -78,40 +78,43 @@
 <h2>SOUNDBOARD</h2>
 
 <div class="board">
-  <button onclick="playSound('sounds/chinese.mp3')">CHINESE</button>
-  <button onclick="playSound('sounds/vineboom.mp3')">VINE BOOM</button>
-  <button onclick="playSound('sounds/fahhh.mp3')">FAHHH</button>
-  <button onclick="playSound('sounds/knocking.mp3')">KNOCKING</button>
-  <button onclick="playSound('sounds/googoogaga.mp3')">GOO GOO GAGA</button>
-  <button onclick="playSound('sounds/tungtungsahur.mp3')">TUNG TUNG SAHUR</button>
-  <button onclick="playSound('sounds/kirk.mp3')">KIRK</button>
-  <button onclick="playSound('sounds/ripmygranny.mp3')">RIP MY GRANNY</button>
-  <button onclick="playSound('sounds/fart.mp3')">FART</button>
-  <button onclick="playSound('sounds/applepay.mp3')">APPLE PAY</button>
-  <button onclick="playSound('sounds/incorrectbuzzer.mp3')">INCORRECT BUZZER</button>
-  <button onclick="playSound('sounds/shutupmom.mp3')">SHUT UP MOM</button>
-  <button onclick="playSound('sounds/snore.mp3')">SNORE</button>
-  <button onclick="playSound('sounds/meow.mp3')">MEOW</button>
-  <button onclick="playSound('sounds/pluh.mp3')">PLUH</button>
+
+<button onclick="playSound('sounds/chinese.mp3')">CHINESE</button>
+<button onclick="playSound('sounds/vineboom.mp3')">VINE BOOM</button>
+<button onclick="playSound('sounds/fahhh.mp3')">FAHHH</button>
+<button onclick="playSound('sounds/knocking.mp3')">KNOCKING</button>
+<button onclick="playSound('sounds/googoogaga.mp3')">GOO GOO GAGA</button>
+<button onclick="playSound('sounds/tungtungsahur.mp3')">TUNG TUNG SAHUR</button>
+<button onclick="playSound('sounds/kirk.mp3')">KIRK</button>
+<button onclick="playSound('sounds/ripmygranny.mp3')">RIP MY GRANNY</button>
+<button onclick="playSound('sounds/fart.mp3')">FART</button>
+<button onclick="playSound('sounds/applepay.mp3')">APPLE PAY</button>
+<button onclick="playSound('sounds/incorrectbuzzer.mp3')">INCORRECT BUZZER</button>
+<button onclick="playSound('sounds/shutupmom.mp3')">SHUT UP MOM</button>
+<button onclick="playSound('sounds/snore.mp3')">SNORE</button>
+<button onclick="playSound('sounds/meow.mp3')">MEOW</button>
+<button onclick="playSound('sounds/pluh.mp3')">PLUH</button>
+<button onclick="playSound('sounds/gay.mp3')">GAY</button>
+<button onclick="playSound('sounds/among us.mp3')">AMONG US</button>
+<button onclick="playSound('sounds/getout.mp3')">GET OUT</button>
+<button onclick="playSound('sounds/dexter.mp3')">DEXTER</button>
+<button onclick="playSound('sounds/spongebob.mp3')">SPONGEBOB</button>
+<button onclick="playSound('sounds/undertaker.mp3')">UNDERTAKER</button>
+
 </div>
 
 <footer>
-  For support contact 
-  <a href="mailto:red40sitesupport@gmail.com">
-    red40sitesupport@gmail.com
-  </a>
+For support contact
+<a href="mailto:red40sitesupport@gmail.com">
+red40sitesupport@gmail.com
+</a>
 </footer>
 
 <script>
-  const audio = new Audio();
-  audio.preload = "auto";
-
-  function playSound(file) {
-    audio.pause();
-    audio.currentTime = 0;
-    audio.src = file;
-    audio.play().catch(err => console.log(err));
-  }
+function playSound(file){
+let audio = new Audio(file);
+audio.play();
+}
 </script>
 
 </body>
